@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Photo from './assets/Photo.jpeg';
+import Photo from './assets/Photo.jpg';
 import Gemini from './assets/Gemini.png';
-import Link_up from './assets/Link-up.png';
+import Link_up from './assets/Sync-Up.jpg';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -22,7 +22,6 @@ const App = () => {
       setScrollY(window.scrollY);
     };
 
-    // Intersection Observer for section detection
     const observerOptions = {
       root: null,
       rootMargin: '-40% 0px -40% 0px',
@@ -67,45 +66,43 @@ const App = () => {
   const projects = [
     {
       id: 1,
-      title: "Gemini Clone",
-      description: "Gemini Clone built with React, powered by Google Gemini API.",
+      title: "Gemini Clone - Chat Bot",
+      description: "Built a Gemini AI clone using React.js with a responsive, conversational interface. Integrated OpenAI API for dynamic, context-aware chatbot responses.",
       image: Gemini,
-      tech: ["React", "CSS3", "Gemini API"],
-      link: "https://achu-gemini.netlify.app/"
+      tech: ["React", "Tailwind CSS", "OpenAI API", "JavaScript"],
+      link: "https://divyageminicloneproject.netlify.app/"
     },
     {
       id: 2,
-      title: "Link Up",
-      description: "Real time chat web application - One to One conversation",
+      title: "Chat Application - Sync Up",
+      description: "Full-stack real-time chat app using React.js (frontend), Node.js + Express (backend), MongoDB, and Socket.IO for live messaging.",
       image: Link_up,
-      tech: ["React", "CSS3", "Firebase", "Redux", "Router"],
-      link: "https://link-up-8ohv.vercel.app/"
+      tech: ["React", "Node.js", "Express", "MongoDB", "Socket.IO", "JWT", "Cloudinary"],
+      link: "https://sync-up-chat-app.vercel.app/login"
     }
   ];
 
   const skills = [
-    { name: "React", level: 85, color: "from-purple-500 to-violet-500" },
-    { name: "Router", level: 95, color: "from-purple-500 to-violet-500" },
-    { name: "Redux", level: 75, color: "from-purple-500 to-violet-500" },
-    { name: "Tailwind CSS", level: 80, color: "from-purple-500 to-violet-500" },
-    { name: "Node js & Express js", level: 50, color: "from-purple-500 to-violet-500" },
-    { name: "Mongo DB", level: 50, color: "from-purple-500 to-violet-500" },
-    { name: "MERN Stack", level: 60, color: "from-purple-500 to-violet-500" },
-    { name: "JAVA", level: 75, color: "from-purple-500 to-violet-500" },
-    { name: "Postman", level: 80, color: "from-purple-500 to-violet-500" },
-    { name: "Canva", level: 70, color: "from-purple-500 to-violet-500" }
+    { name: "React.js", level: 90, color: "from-purple-500 to-violet-500" },
+    { name: "Next.js", level: 85, color: "from-purple-500 to-violet-500" },
+    { name: "Laravel", level: 80, color: "from-purple-500 to-violet-500" },
+    { name: "Node.js & Express.js", level: 75, color: "from-purple-500 to-violet-500" },
+    { name: "Tailwind CSS", level: 85, color: "from-purple-500 to-violet-500" },
+    { name: "JavaScript", level: 90, color: "from-purple-500 to-violet-500" },
+    { name: "MongoDB", level: 75, color: "from-purple-500 to-violet-500" },
+    { name: "MySQL", level: 70, color: "from-purple-500 to-violet-500" },
+    { name: "Socket.IO", level: 80, color: "from-purple-500 to-violet-500" },
+    { name: "Postman", level: 85, color: "from-purple-500 to-violet-500" }
   ];
 
-  const exploring = ["Next.js", "TypeScript", "Framer Motion", "SQL", "PHP"];
+  const exploring = ["TypeScript", "Next.js", "Laravel", "MySQL", "Antares"];
 
-  // Contact form state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
   const handleChange = (e) => {
@@ -124,7 +121,7 @@ const App = () => {
       `Subject: ${formData.subject}\n\n` +
       `Message:\n${formData.message}`
     );
-    const mailtoLink = `mailto:achuthan302004@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:sridivyadharshinisv@gmail.com?subject=${subject}&body=${body}`;
 
     window.location.href = mailtoLink;
     setSubmitStatus('success');
@@ -133,9 +130,8 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-x-hidden relative">
-      {/* Animated Background Elements */}
+   
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {/* Floating particles */}
         {[...Array(40)].map((_, i) => (
           <div
             key={i}
@@ -149,30 +145,17 @@ const App = () => {
           ></div>
         ))}
 
-        {/* Gradient blobs */}
         <div
           className="absolute w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
-          style={{
-            top: '-50px',
-            left: '-50px',
-            animationDelay: '0s'
-          }}
+          style={{ top: '-50px', left: '-50px', animationDelay: '0s' }}
         ></div>
         <div
           className="absolute w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
-          style={{
-            top: '50%',
-            right: '-100px',
-            animationDelay: '2s'
-          }}
+          style={{ top: '50%', right: '-100px', animationDelay: '2s' }}
         ></div>
         <div
           className="absolute w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
-          style={{
-            bottom: '-100px',
-            left: '50%',
-            animationDelay: '4s'
-          }}
+          style={{ bottom: '-100px', left: '50%', animationDelay: '4s' }}
         ></div>
       </div>
 
@@ -191,26 +174,22 @@ const App = () => {
       <nav className={`fixed top-0 w-full z-40 px-6 py-4 transition-all duration-500 ${scrollY > 50 ? 'backdrop-blur-md bg-white/10 border-b border-white/20' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
-            Achuthan KS
+            Sri Divya Dharshini SV
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {['home', 'about', 'projects', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className={`capitalize font-medium transition-all duration-500 hover:text-purple-300 relative group ${activeSection === item ? 'text-purple-300' : 'text-white'
-                  }`}
+                className={`capitalize font-medium transition-all duration-500 hover:text-purple-300 relative group ${activeSection === item ? 'text-purple-300' : 'text-white'}`}
               >
                 {item}
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full ${activeSection === item ? 'w-full' : ''
-                  }`}></span>
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full ${activeSection === item ? 'w-full' : ''}`}></span>
               </button>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-white group"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -225,7 +204,6 @@ const App = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 w-full bg-white/10 backdrop-blur-md rounded-b-lg mt-2 border-t border-white/20 animate-slideDown">
             {['home', 'about', 'projects', 'contact'].map((item, index) => (
@@ -248,26 +226,25 @@ const App = () => {
           <div className={`mb-6 sm:mb-8 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="w-42 h-42 sm:w-50 sm:h-50 mx-auto mb-4 sm:mb-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1">
               <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center overflow-hidden">
-                <img src={Photo} alt="Achuthan" className="rounded-full w-full h-full object-cover transform hover:scale-110 transition-transform duration-500" />
+                <img src={Photo} alt="Sri Divya Dharshini" className="rounded-full w-full h-full object-cover transform hover:scale-110 transition-transform duration-500" />
               </div>
             </div>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent animate-fadeIn">
-            Hy!, I'm a
+            Hi, I'm
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
-            MERN-Stack Developer
+            Sri Divya Dharshini SV
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 text-gray-300 max-w-3xl mx-auto leading-relaxed px-2 animate-fadeIn" style={{ animationDelay: '300ms' }}>
-            I build scalable, full-stack web applications using the MERN stack (MongoDB, Express.js, React, Node.js).
-            As a fresher, I bring fresh ideas, creativity, and modern development approaches to every project I work on.
+            Full-Stack Developer skilled in React.js, Next.js, Node.js, Laravel, and MongoDB. Passionate about building scalable, production-grade web applications with real-time features and AI integrations.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
-              href="https://www.linkedin.com/in/achuthan-ks-2a97a427a/"
+              href="https://www.linkedin.com/in/divya-dharshini8405/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold text-sm sm:text-lg transition-all duration-500 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 overflow-hidden"
@@ -276,7 +253,7 @@ const App = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </a>
             <a
-              href="https://drive.google.com/file/d/1z2J1nMRt5F9oGZQo2WnghDjOu2PQNnmK/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1szzk8mvnKm1vLRbRv4ZTZecjVvyODmDA/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-6 sm:px-8 py-3 sm:py-4 border-2 border-purple-400 rounded-full font-semibold text-sm sm:text-lg transition-all duration-500 hover:bg-purple-400 hover:text-slate-900 transform hover:scale-105 overflow-hidden"
@@ -301,42 +278,39 @@ const App = () => {
             About Me
           </h2>
 
-          {/* First Row — 2 Columns */}
           <div className="grid md:grid-cols-2 gap-6 sm:gap-10 mb-8 sm:mb-10">
             <div className={`space-y-6 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <div className="bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                 <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-purple-300 flex items-center">
-                  <span className="mr-3">👨‍💻</span> Who I Am
+                  <span className="mr-3">👩‍💻</span> Who I Am
                 </h3>
                 <div className="space-y-4 sm:space-y-6 text-gray-300">
                   <p className="text-base sm:text-lg leading-relaxed text-justify">
-                    I'm currently pursuing a B.Tech in Information Technology at KLN College of Engineering with a CGPA of 7.4. Along with my academics, I'm a passionate Frontend Developer specializing in React and modern UI frameworks like Tailwind CSS. As a fresher, I bring enthusiasm, creativity, and a strong drive to learn and grow in the ever-evolving world of web development.
+                    I'm pursuing a B.Tech in Information Technology at K.L.N College of Engineering and Technology (2022–Present) with a CGPA of 8.4/10. I'm a passionate Full-Stack Developer with hands-on experience in building real-world applications using modern tech stacks like React, Next.js, Laravel, Node.js, and MongoDB.
                   </p>
                   <p className="text-base sm:text-lg leading-relaxed text-justify">
-                    I love transforming ideas into beautiful, responsive interfaces that users enjoy interacting with. Clean code, pixel-perfect design, and smooth user experience are my top priorities, and I am continuously improving my skills in React.js, MERN stack, and modern web development tools.
+                    I’ve built a real-time chat app using Socket.IO and an AI-powered chatbot using OpenAI API. I interned at MercuryMinds as a Full-Stack Developer and at IUCS as a Frontend Developer, where I enhanced live web projects and improved UI/UX.
                   </p>
                 </div>
               </div>
 
               <div className="bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                 <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-purple-300 flex items-center">
-                  <span className="mr-3">🚀</span> What Drives Me
+                  <span className="mr-3">🏆</span> Achievements
                 </h3>
                 <ul className="list-disc pl-4 sm:pl-5 space-y-2 sm:space-y-3 text-gray-300 text-base sm:text-lg">
-                  <li>Building meaningful digital experiences</li>
-                  <li>Continuous learning and skill mastery</li>
-                  <li>Solving real problems with elegant code</li>
-                  <li>Collaborating and growing with great teams</li>
+                  <li>Winner – Project Presentation at SIT College Symposium (2024)</li>
+                  <li>Developed production-grade apps used in live environments</li>
+                  <li>Strong focus on clean, maintainable, and scalable code</li>
                 </ul>
               </div>
             </div>
 
             <div className={`transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              {/* Second Row — 1 Column */}
               <div className="mb-8 sm:mb-10">
                 <div className="bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                   <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-purple-300 flex items-center">
-                    <span className="mr-3">📊</span> Skills & Progress
+                    <span className="mr-3">📊</span> Technical Skills
                   </h3>
                   <div className="space-y-4 sm:space-y-5">
                     {skills.map((skill, index) => (
@@ -361,7 +335,6 @@ const App = () => {
             </div>
           </div>
 
-          {/* Third Row — 1 Column */}
           <div className={`transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6 items-center">
@@ -382,7 +355,7 @@ const App = () => {
                 </div>
                 <div className="flex items-center justify-center md:justify-end">
                   <blockquote className="text-center md:text-right text-base sm:text-xl italic text-gray-300 max-w-md p-4 bg-slate-700/50 rounded-lg border border-slate-600">
-                    "I code not just to build websites — but to build experiences that matter."
+                    "I build not just apps—but intelligent, responsive experiences that solve real problems."
                   </blockquote>
                 </div>
               </div>
@@ -443,10 +416,10 @@ const App = () => {
                   </div>
                 </div>
 
-                {/* Animated border effect */}
+                {/* Animated border effect — now working! */}
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
                   <div className="absolute inset-0 border-2 border-purple-500 rounded-2xl animate-spin-slow"></div>
-                  <div className="absolute inset-1 border-2 border-pink-500 rounded-2xl animate-spin-slow" style={{ animationDirection: 'reverse', animationDuration: '8s' }}></div>
+                  <div className="absolute inset-1 border-2 border-pink-500 rounded-2xl animate-spin-slow-reverse"></div>
                 </div>
               </a>
             ))}
@@ -459,19 +432,17 @@ const App = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col items-center text-center mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 p-2 sm:mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent animate-slideIn">
-              Let's Work Together
+              Let's Connect
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-2 animate-fadeIn">
-              I'm currently looking for new opportunities and would love to hear from you.
-              Let's create something amazing together!
+              I'm open to internship opportunities and collaborative projects. Feel free to reach out!
             </p>
           </div>
 
           <div className="w-full max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-              {/* Contact Information */}
               <div className={`bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white">Contact Information</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white">Contact Details</h3>
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-start space-x-3 sm:space-x-4 group">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-600/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-purple-600/30 transition-colors duration-300">
@@ -481,7 +452,7 @@ const App = () => {
                     </div>
                     <div>
                       <p className="text-gray-400 text-xs sm:text-sm">Phone</p>
-                      <p className="text-white font-medium text-sm sm:text-base">+91 7092579973</p>
+                      <p className="text-white font-medium text-sm sm:text-base">+91 6369495694</p>
                     </div>
                   </div>
 
@@ -493,7 +464,7 @@ const App = () => {
                     </div>
                     <div>
                       <p className="text-gray-400 text-xs sm:text-sm">Email</p>
-                      <p className="text-white font-medium text-sm sm:text-base">achuthan302004@gmail.com</p>
+                      <p className="text-white font-medium text-sm sm:text-base">sridivyadharshinisv@gmail.com</p>
                     </div>
                   </div>
 
@@ -506,37 +477,37 @@ const App = () => {
                     </div>
                     <div>
                       <p className="text-gray-400 text-xs sm:text-sm">Location</p>
-                      <p className="text-white font-medium text-sm sm:text-base">Madurai, TamilNadu, India</p>
+                      <p className="text-white font-medium text-sm sm:text-base">Sivagangai, Tamil Nadu, India</p>
                     </div>
                   </div>
 
                   <div className="mt-6 pt-4 sm:pt-6 border-t border-white/10">
-                    <h4 className="text-lg font-semibold text-white mb-3 sm:mb-4">Available For</h4>
+                    <h4 className="text-lg font-semibold text-white mb-3 sm:mb-4">Open To</h4>
                     <div className="grid grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm">
                       <div className="flex items-center space-x-2 group">
                         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full group-hover:animate-pulse"></div>
-                        <span className="text-gray-300">Front-end Dev Internship</span>
+                        <span className="text-gray-300">Full-Stack Internships</span>
                       </div>
                       <div className="flex items-center space-x-2 group">
                         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full group-hover:animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                        <span className="text-gray-300">Full-time Roles</span>
+                        <span className="text-gray-300">Frontend Roles</span>
                       </div>
                       <div className="flex items-center space-x-2 group">
                         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full group-hover:animate-pulse" style={{ animationDelay: '1s' }}></div>
-                        <span className="text-gray-300">Remote Work</span>
+                        <span className="text-gray-300">Remote Collaborations</span>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-4 sm:mt-6">
-                    <h4 className="text-lg font-semibold text-white mb-3 sm:mb-4">Connect With Me</h4>
+                    <h4 className="text-lg font-semibold text-white mb-3 sm:mb-4">Find Me</h4>
                     <div className="flex space-x-3 sm:space-x-4">
-                      <a href="https://github.com/Achuthan84" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-600/20 rounded-lg flex items-center justify-center hover:bg-purple-600/30 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                      <a href="https://github.com/DivyaDharshini012" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-600/20 rounded-lg flex items-center justify-center hover:bg-purple-600/30 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                       </a>
-                      <a href="https://www.linkedin.com/in/achuthan-ks-2a97a427a/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-600/20 rounded-lg flex items-center justify-center hover:bg-purple-600/30 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                      <a href="https://www.linkedin.com/in/divya-dharshini8405/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-600/20 rounded-lg flex items-center justify-center hover:bg-purple-600/30 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
@@ -546,7 +517,6 @@ const App = () => {
                 </div>
               </div>
 
-              {/* Contact Form */}
               <div className={`bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div className="grid grid-cols-2 gap-3 sm:gap-4">
@@ -593,7 +563,7 @@ const App = () => {
 
                   {submitStatus === 'success' && (
                     <div className="p-2 sm:p-3 bg-green-500/20 border border-green-500/30 rounded-lg text-green-300 text-xs sm:text-sm text-center animate-fadeIn">
-                      Your email client should open automatically. If not, please check your email settings.
+                      Your email client should open automatically.
                     </div>
                   )}
                 </form>
@@ -607,145 +577,77 @@ const App = () => {
       <footer className="py-4 px-6 border-t border-white/10 relative">
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-1 animate-gradient">
-            Achuthan's Portfolio
+            Sri Divya Dharshini's Portfolio
           </div>
           <p className="text-gray-400 mb-1">
-            © 2025 made by Achuthan. All rights reserved
+            © 2025 made by Sri Divya Dharshini SV. All rights reserved
           </p>
         </div>
       </footer>
 
-      {/* Custom CSS for animations */}
+      {/* Custom CSS for animations — FIXED */}
       <style jsx>{`
         @keyframes blob {
-          0% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
         }
         
         @keyframes float {
-          0% {
-            transform: translateY(0px) translateX(0px);
-          }
-          25% {
-            transform: translateY(-10px) translateX(5px);
-          }
-          50% {
-            transform: translateY(0px) translateX(0px);
-          }
-          75% {
-            transform: translateY(10px) translateX(-5px);
-          }
-          100% {
-            transform: translateY(0px) translateX(0px);
-          }
+          0% { transform: translateY(0px) translateX(0px); }
+          25% { transform: translateY(-10px) translateX(5px); }
+          50% { transform: translateY(0px) translateX(0px); }
+          75% { transform: translateY(10px) translateX(-5px); }
+          100% { transform: translateY(0px) translateX(0px); }
         }
         
         @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        
+        @keyframes spin-slow-reverse {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(-360deg); }
         }
         
         @keyframes gradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
         
         @keyframes slideIn {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         
         @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
         
         @keyframes shine {
-          0% {
-            transform: translateX(-100%);
-          }
-          50% {
-            transform: translateX(100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
+          0% { transform: translateX(-100%); }
+          50% { transform: translateX(100%); }
+          100% { transform: translateX(100%); }
         }
         
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
-        }
-        
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 3s ease infinite;
-        }
-        
-        .animate-slideIn {
-          animation: slideIn 1s ease-out forwards;
-        }
-        
-        .animate-slideDown {
-          animation: slideDown 0.5s ease-out forwards;
-        }
-        
-        .animate-fadeIn {
-          animation: fadeIn 1s ease-out forwards;
-        }
-        
-        .animate-shine {
-          animation: shine 2s ease-out infinite;
-        }
+        .animate-blob { animation: blob 7s infinite; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+        .animate-spin-slow-reverse { animation: spin-slow-reverse 20s linear infinite; }
+        .animate-gradient { background-size: 200% 200%; animation: gradient 3s ease infinite; }
+        .animate-slideIn { animation: slideIn 1s ease-out forwards; }
+        .animate-slideDown { animation: slideDown 0.5s ease-out forwards; }
+        .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+        .animate-shine { animation: shine 2s ease-out infinite; }
         
         .delay-300 { animation-delay: 300ms; }
         .delay-500 { animation-delay: 500ms; }
