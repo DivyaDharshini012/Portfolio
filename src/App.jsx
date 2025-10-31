@@ -253,7 +253,7 @@ const App = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </a>
             <a
-              href="https://drive.google.com/file/d/19ucMz2Wc5kXU22DgfFdxSZmqcD6NwVEp/view?usp=sharing"
+              href="https://drive.google.com/file/d/1O6LMga5SPuOg46tOqpCgRsg80brTKmXv/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-6 sm:px-8 py-3 sm:py-4 border-2 border-purple-400 rounded-full font-semibold text-sm sm:text-lg transition-all duration-500 hover:bg-purple-400 hover:text-slate-900 transform hover:scale-105 overflow-hidden"
